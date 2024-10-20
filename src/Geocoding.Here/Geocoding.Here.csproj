@@ -3,9 +3,9 @@
   <PropertyGroup>
     <Description>Includes a model and interface for communicating with four popular Geocoding providers. Current implementations include: Google Maps, Yahoo! PlaceFinder, Bing Maps (aka Virtual Earth), and Mapquest. The API returns latitude/longitude coordinates and normalized address information. This can be used to perform address validation, real time mapping of user-entered addresses, distance calculations, and much more.</Description>
     <AssemblyTitle>Geocoding.net Here</AssemblyTitle>
-    <VersionPrefix>4.0.0-beta1</VersionPrefix>
+    <VersionPrefix>4.0.0</VersionPrefix>
     <Authors>chadly</Authors>
-    <TargetFrameworks>netstandard1.3;net46</TargetFrameworks>
+    <TargetFramework>net8.0</TargetFramework>
     <AssemblyName>Geocoding.Here</AssemblyName>
     <PackageId>Geocoding.Here</PackageId>
     <PackageTags>geocoding;geocode;geocoder;maps;address;validation;normalization;google-maps;bing-maps;yahoo-placefinder;mapquest</PackageTags>
@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)'=='netstandard1.3'">

@@ -3,53 +3,53 @@ using Xunit;
 
 namespace Geocoding.Tests
 {
-	public class SettingsFixture
-	{
-		readonly IConfigurationRoot config;
+    public class SettingsFixture
+    {
+        readonly IConfigurationRoot config;
 
-		public SettingsFixture()
-		{
-			config = new ConfigurationBuilder()
-				.AddJsonFile("settings.json")
-				.AddJsonFile("settings-override.json", optional: true)
-				.Build();
-		}
+        public SettingsFixture()
+        {
+            config = new ConfigurationBuilder()
+                .AddJsonFile("settings.json")
+                .AddJsonFile("settings-override.json", optional: true)
+                .Build();
+        }
 
-		public string YahooConsumerKey
-		{
-			get { return config.GetValue<string>("yahooConsumerKey"); }
-		}
+        public string YahooConsumerKey
+        {
+            get { return config["yahooConsumerKey"]; } // Change GetValue to indexer
+        }
 
-		public string YahooConsumerSecret
-		{
-			get { return config.GetValue<string>("yahooConsumerSecret"); }
-		}
+        public string YahooConsumerSecret
+        {
+            get { return config["yahooConsumerSecret"]; } // Change GetValue to indexer
+        }
 
-		public string BingMapsKey
-		{
-			get { return config.GetValue<string>("bingMapsKey"); }
-		}
+        public string BingMapsKey
+        {
+            get { return config["bingMapsKey"]; } // Change GetValue to indexer
+        }
 
-		public string GoogleApiKey
-		{
-			get { return config.GetValue<string>("googleApiKey"); }
-		}
+        public string GoogleApiKey
+        {
+            get { return config["googleApiKey"]; } // Change GetValue to indexer
+        }
 
-		public string MapQuestKey
-		{
-			get { return config.GetValue<string>("mapQuestKey"); }
-		}
+        public string MapQuestKey
+        {
+            get { return config["mapQuestKey"]; } // Change GetValue to indexer
+        }
 
-		public string HereAppId
-		{
-			get { return config.GetValue<string>("hereAppId"); }
-		}
+        public string HereAppId
+        {
+            get { return config["hereAppId"]; } // Change GetValue to indexer
+        }
 
-		public string HereAppCode
-		{
-			get { return config.GetValue<string>("hereAppCode"); }
-		}
-	}
+        public string HereAppCode
+        {
+            get { return config["hereAppCode"]; } // Change GetValue to indexer
+        }
+    }
 
 	[CollectionDefinition("Settings")]
 	public class SettingsCollection : ICollectionFixture<SettingsFixture>
